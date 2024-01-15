@@ -17,6 +17,11 @@ namespace Task_1
             this.mediator = mediator;
         }
 
+        public void AddItemTo(int index)
+        {
+            mediator.TakeItem(this, index);
+        }
+
         public void SetMediator(IMediator mediator)
         {
             this.mediator = mediator;

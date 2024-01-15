@@ -12,10 +12,5 @@ namespace Task_1
             Name = name;
             Items = items;
         }
-
-        public void AddItemToInventory(int index)
-        {
-            mediator.TakeItem(this, index);
-        }
     }
 }

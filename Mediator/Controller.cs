@@ -2,14 +2,14 @@
 {
     public class Controller : IMediator
     {
-        private Table _table;
+        private Itemable _place;
         private Inventory _inventory;
 
-        public Controller(Table table, Inventory inventory)
+        public Controller(Itemable place, Inventory inventory)
         {
-            _table = table;
+            _place = place;
             _inventory = inventory;
-            table.SetMediator(this);
+            place.SetMediator(this);
             inventory.SetMediator(this);
         }
 
@@ -17,13 +17,13 @@
         {
             if (itemable is Table table)
             {
-                _inventory.AddItem(_table.Items[index]);
-                _table.RemoveItem(index);
+                _inventory.AddItem(_place.Items[index]);
+                _place.RemoveItem(index);
             }
 
             if (itemable is Inventory inventory)
             {
-                _table.AddItem(_table.Items[index]);
+                _place.AddItem(_place.Items[index]);
                 _inventory.RemoveItem(index);
             }
         }

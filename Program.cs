@@ -25,7 +25,7 @@ namespace Task_1
 
                 int index = GetIndex(table.Items.Count);
 
-                table.AddItemToInventory(index);
+                table.AddItemTo(index);
             }
 
             inventory.ShowInfo();
